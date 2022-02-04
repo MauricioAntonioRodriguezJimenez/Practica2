@@ -1,0 +1,112 @@
+// Mauricio Antonio Rodríguez Jiménez
+package practica2;
+
+/*Creacion de la clase "Personajes" en la cual estarán asignada los diferentes 
+atributos que tendrá cada personaje*/
+public class Personaje {
+    
+   private String nombre;
+   private int salud;
+   private int ataque;
+   private int defensa;
+   private double ta;
+   
+   
+   //---------------------------------------------------------------------------------------------------
+   //Este sería el método constructor
+   public Personaje(){
+      String nombre = "Computadora";
+      int salud = 200;
+      int ataque = 30;
+      int defensa = 20;
+      double ta = 0.5;
+       
+   }
+   
+   //---------------------------------------------------------------------------------------------------
+      /*  Apartir de aca se realizará toda la encasulapción de los metodos 
+      que recibirá cada personaje*/
+
+   public String getNombre(){
+       
+       return this.nombre;
+   }
+   
+   public void setNombre (String _nombre){
+       
+       this.nombre= _nombre;
+   }
+   //---------------------------------------------------------------------------------------------------
+   public int getSalud (){
+       
+    return this.salud;   
+   }
+   
+   public void setSalud(int _salud){
+       this.salud = _salud;
+   }
+   //---------------------------------------------------------------------------------------------------
+   public int getAtaque(){
+      return this.ataque;
+   }
+   
+   public void setAtaque(int _ataque){
+       this.ataque = _ataque;
+   }
+   //---------------------------------------------------------------------------------------------------
+   public int getDefensa(){
+       
+       return this.defensa;
+   }
+   
+   public void setDefensa (int _defensa){
+     this.defensa = _defensa;  
+   }
+   //---------------------------------------------------------------------------------------------------
+   public double getTa (){
+       return this.ta;
+   }
+   
+   public void setTa (double _Ta){
+       this.ta = _Ta;
+   }
+   
+   //---------------------------------------------------------------------------------------------------
+   
+   /* Se comienzan a crear los diferentes metodos de la clase Personaje
+   Se crea el método de "Atacado" como una acción que realizará para luchar.*/
+   public void Atacado(int _ataque){
+       
+       int damage= _ataque - this.defensa;
+       int vidaR = this.salud;
+       if (damage >0){
+           vidaR-=damage;
+           System.out.println(this.nombre + " ha recibido un golpe de " + damage);
+       }else{
+           System.out.println(this.nombre + " recibió un golpe debil... Levantate y sigue luchando");
+       }
+       
+       this.salud = vidaR;
+       System.out.println(this.nombre + " tienes " + this.salud + " puntos de vida");
+   }
+   //---------------------------------------------------------------------------------------------------
+   // También se crea un metodo para que el personaje logre esquivar determinados ataques.
+   public void Esquivar(){
+       System.out.println(this.nombre + " logro esquivar el golpe... Miss");
+   }
+   
+   //---------------------------------------------------------------------------------------------------
+   /* Este metodo es el que devuelve uun estado para ver si el personaje
+   sigue con vida o no*/
+   
+   public boolean Estado()
+   {
+       boolean vida = true;
+       if (this.salud <=0) vida= false ;
+       
+       return vida;
+   }
+   
+    
+}
+

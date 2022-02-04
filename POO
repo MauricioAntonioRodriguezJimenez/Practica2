@@ -96,7 +96,7 @@ public class Personaje {
    }
    
    //---------------------------------------------------------------------------------------------------
-   /* Este metodo es el que devuelve uun estado para ver si el personaje
+   /* Este metodo es el que devuelve un estado para ver si el personaje
    sigue con vida o no*/
    
    public boolean Estado()
